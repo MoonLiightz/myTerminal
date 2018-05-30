@@ -27,7 +27,12 @@ case "$1" in
 		ln -s -f ~/myTerminal/tmux/.tmux.conf ~/.tmux.conf
 		ln -s -f ~/myTerminal/tmux/.tmux.conf.local ~/.tmux.conf.local
 		
+		echo "Install tmux plugin manager"
+		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+		
+		echo "Set start console to zsh"
 		chsh $USER -s $(which zsh)
+		
 		echo "Install oh-my-zsh"
 		exit | sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 		
