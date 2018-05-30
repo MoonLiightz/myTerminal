@@ -27,6 +27,7 @@ case "$1" in
 		ln -s -f ~/myTerminal/tmux/.tmux.conf ~/.tmux.conf
 		ln -s -f ~/myTerminal/tmux/.tmux.conf.local ~/.tmux.conf.local
 		
+		chsh $USER -s $(which zsh)
 		echo "Install oh-my-zsh"
 		exit | sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 		
